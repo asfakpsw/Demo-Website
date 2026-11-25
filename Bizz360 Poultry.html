@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bizz360 Poultry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, plain-spoken family business from Saurashtra
+   IDEA: a sunlit farm signboard — egg to plate
+   PICTURE: layered morning farm scene with hatchery shed and hen; chain drawn as a road
+   COLOUR and TYPE: maroon field, yolk accent, white ground; Hind Vadodara for Gujarati + English
+   LAYOUT: sticky menu, full-width bands, cards that stack on phone, fixed WhatsApp/Call */
+:root{color-scheme:light dark;--bg:light-dark(#fffdf8,#1b1210);--ink:light-dark(#2a1a16,#f6ece6);--mut:light-dark(#6d5a53,#c7b4ab);--card:light-dark(#fff,#261a17);--line:light-dark(#eadfd6,#3d2b26);--mar:#7a1f1a;--mar2:light-dark(#9b2a22,#a83a30);--yolk:#f4b400;--wa:#1f9d55}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Hind Vadodara",system-ui,sans-serif;overflow-x:clip}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(28px,4vw,64px) max(5vw,16px)}
+header{position:sticky;top:0;z-index:20;background:var(--mar);color:#fff}
+.bar{display:flex;align-items:center;gap:12px;padding:10px max(5vw,16px);flex-wrap:wrap}
+.logo{font-weight:700;font-size:20px;text-decoration:none;display:flex;align-items:center;gap:8px;margin-inline-end:auto}
+.logo i{width:30px;height:30px;border-radius:50% 50% 46% 46%/58% 58% 42% 42%;background:var(--yolk);display:inline-block}
+nav{display:flex;gap:2px;flex-wrap:wrap;width:100%;order:3}
+nav a{text-decoration:none;padding:8px 10px;border-radius:8px;font-size:15px;min-height:40px;display:flex;align-items:center}
+nav a.on,nav a:hover{background:rgba(255,255,255,.14)}
+nav a.on{box-shadow:inset 0 -3px 0 var(--yolk)}
+.lang{background:#fff;color:var(--mar);border:0;border-radius:999px;padding:0 16px;height:40px;font:600 15px inherit;font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--yolk);outline-offset:2px}
+@media(min-width:1000px){nav{width:auto;order:0}}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.05;margin:0 0 14px;text-wrap:balance}
+h2{font-size:clamp(26px,3vw,34px);line-height:1.15;margin:0 0 12px;text-wrap:balance}
+h3{font-size:20px;margin:0 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+.lead{font-size:19px;color:var(--mut)}
+.hero{background:var(--mar);color:#fff;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:32px;align-items:center}
+.hero .lead{color:#f3d9d2}
+.hero svg{width:100%;height:auto;display:block;border-radius:18px}
+@media(max-width:800px){.hero{grid-template-columns:minmax(0,1fr)}}
+.btns{display:grid;gap:10px;margin-top:20px}
+.big{display:flex;align-items:center;justify-content:space-between;gap:10px;background:#fff;color:var(--mar);text-decoration:none;font-weight:700;font-size:18px;padding:14px 18px;border-radius:12px;min-height:56px}
+.big:nth-child(1){background:var(--yolk);color:#3a1a00}
+.big span{font-size:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.card b.n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--yolk);color:#3a1a00;margin-bottom:8px}
+.photo{aspect-ratio:4/3;border-radius:12px;display:grid;place-items:end start;padding:12px;color:#fff;font-weight:600;background:linear-gradient(160deg,#c4552b,#7a1f1a 70%)}
+.photo:nth-child(2){background:linear-gradient(160deg,#e0a21a,#9b5a12)}
+.photo:nth-child(3){background:linear-gradient(160deg,#8a6a4a,#4a3122)}
+.photo:nth-child(4){background:linear-gradient(160deg,#d97a5a,#a83a30)}
+.alt{background:light-dark(#fbf1e4,#221714)}
+.two{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:start}
+@media(max-width:800px){.two{grid-template-columns:minmax(0,1fr)}}
+ul.t{padding-inline-start:20px;margin:0 0 12px}ul.t li{margin-bottom:6px}
+form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px}
+label{display:grid;gap:4px;font-weight:600;font-size:15px}
+input,select,textarea{font:16px inherit;font-family:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-height:44px}
+.go{background:var(--mar2);color:#fff;border:0;border-radius:10px;font:700 17px inherit;font-family:inherit;min-height:48px;cursor:pointer}
+.go[disabled]{opacity:.5;cursor:not-allowed}
+.ok{background:#e6f6ec;color:#14532d;border-radius:10px;padding:10px 12px;display:none}
+.note{font-size:14px;color:var(--mut)}
+.chain{width:100%;height:auto;display:block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:0 16px;min-height:44px;font:600 15px inherit;font-family:inherit;cursor:pointer}
+.tabs button.on{background:var(--mar2);color:#fff;border-color:var(--mar2)}
+table{border-collapse:collapse;width:100%}td,th{padding:10px;border-bottom:1px solid var(--line);text-align:start}
+footer{background:#2a0f0c;color:#f0dcd5;padding:32px max(5vw,16px) 100px;font-size:15px}
+footer .grid{gap:24px}footer h3{color:#fff}
+.fab{position:fixed;inset-inline-end:14px;bottom:14px;z-index:30;display:flex;gap:10px}
+.fab a{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:700;padding:0 18px;min-height:52px;border-radius:999px;box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.fab .w{background:var(--wa)}.fab .c{background:var(--mar2)}
+.page{display:none}.page.on{display:block;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){.page.on{animation:none}}
+.nowrap{white-space:nowrap}
+</style>
+</head>
+<body>
+<header>
+ <div class="bar">
+  <a class="logo" href="#home"><i></i><span data-t="brand"></span></a>
+  <nav id="nav"></nav>
+  <button class="lang" id="lang">ગુજરાતી</button>
+ </div>
+</header>
+
+<main id="main"></main>
+
+<footer>
+ <div class="wrap grid">
+  <div><h3 data-t="brand"></h3><p data-t="fAddr"></p></div>
+  <div><h3 data-t="fReach"></h3><p><span class="nowrap">+91 98250 00000</span><br>info@example.com<br><span data-t="hours"></span></p></div>
+  <div><h3 data-t="fPages"></h3><p id="fnav"></p></div>
+ </div>
+ <p class="note wrap" data-t="demo"></p>
+</footer>
+
+<div class="fab">
+ <a class="w" href="https://wa.me/919825000000" target="_blank" rel="noopener"><span>💬</span><span data-t="wa"></span></a>
+ <a class="c" href="tel:+919825000000"><span>☎</span><span data-t="call"></span></a>
+</div>
+
+<script>
+{
+const T={
+en:{brand:"Bizz360 Poultry",wa:"WhatsApp",call:"Call",hours:"Mon–Sat, 8 am – 7 pm",fReach:"Reach us",fPages:"Pages",
+fAddr:"Office: Station Road, Wankaner, Dist. Morbi, Gujarat",demo:"Demo website — phone numbers, addresses and photos are placeholders.",
+nav:["Home","Live Birds","Shifa Cut Chicken","Our Chain","About Us","Partner With Us","Careers","Contact"],
+send:"Send enquiry",saved:"Thank you! Your enquiry is saved and our team will call you soon.",
+name:"Your name",phone:"Phone",district:"District",area:"Area",biz:"Business name",
+},
+gu:{brand:"Bizz360 પોલ્ટ્રી",wa:"વોટ્સએપ",call:"કૉલ કરો",hours:"સોમ–શનિ, સવારે 8 – સાંજે 7",fReach:"સંપર્ક",fPages:"પાનાં",
+fAddr:"ઑફિસ: સ્ટેશન રોડ, વાંકાનેર, જિ. મોરબી, ગુજરાત",demo:"ડેમો વેબસાઇટ — ફોન નંબર, સરનામાં અને ફોટા નમૂના માટે છે.",
+nav:["હોમ","જીવતાં પક્ષી","શિફા કટ ચિકન","અમારી ચેઇન","અમારા વિશે","ભાગીદાર બનો","નોકરી","સંપર્ક"],
+send:"પૂછપરછ મોકલો",saved:"આભાર! તમારી પૂછપરછ સેવ થઈ ગઈ છે, અમારી ટીમ જલ્દી ફોન કરશે.",
+name:"તમારું નામ",phone:"ફોન",district:"જિલ્લો",area:"વિસ્તાર",biz:"બિઝનેસનું નામ",
+}};
+const ids=["home","traders","shifa","chain","about","partner","careers","contact"];
+let L="en";try{L=localStorage.getItem("lang")||"en"}catch(e){}
+const t=k=>T[L][k];
+const g=(en,gu)=>L==="en"?en:gu;
+
+const field=(lab,type="text",opts)=>opts
+ ?`<label>${lab}<select required>${opts.map(o=>`<option>${o}</option>`).join("")}</select></label>`
+ :`<label>${lab}<input type="${type}" required ${type==="tel"?'inputmode="tel" pattern="[0-9 +]{10,14}"':''}></label>`;
+const form=(title,fields,dis)=>`<form data-f="${title}"><h3>${title}</h3>${fields.join("")}
+ <button class="go" ${dis?"disabled":""}>${t("send")}</button><div class="ok" role="status">${t("saved")}</div></form>`;
+
+const scene=`<svg viewBox="0 0 600 420" role="img" aria-label="Farm and hatchery at sunrise">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf6b"/><stop offset="1" stop-color="#ffe9b8"/></linearGradient>
+<linearGradient id="fld" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a441"/><stop offset="1" stop-color="#b07a26"/></linearGradient></defs>
+<rect width="600" height="420" fill="url(#sky)"/><circle cx="450" cy="130" r="62" fill="#fff4cf"/><circle cx="450" cy="130" r="44" fill="#f4b400"/>
+<path d="M0 260 Q150 200 300 245 T600 230 V420 H0Z" fill="#e3b45c"/><path d="M0 300 Q200 255 380 290 T600 280 V420 H0Z" fill="url(#fld)"/>
+<g><rect x="60" y="205" width="230" height="80" fill="#f6ece0"/><rect x="60" y="275" width="230" height="10" fill="#d6c3ac"/>
+<path d="M45 210 L175 160 L305 210Z" fill="#9b2a22"/><path d="M175 160 L305 210 L290 210 L175 166Z" fill="#7a1f1a"/>
+${[0,1,2,3,4].map(i=>`<rect x="${78+i*42}" y="225" width="26" height="16" rx="3" fill="#7a1f1a" opacity=".75"/>`).join("")}
+<rect x="160" y="248" width="30" height="37" fill="#7a1f1a"/></g>
+<g><rect x="370" y="235" width="40" height="70" fill="#cfc2b2"/><ellipse cx="390" cy="235" rx="20" ry="8" fill="#9b2a22"/><rect x="410" y="270" width="60" height="35" fill="#e8dccb"/></g>
+<g transform="translate(250 300)"><ellipse cx="40" cy="78" rx="52" ry="8" fill="#000" opacity=".15"/>
+<path d="M0 40 Q0 0 40 5 Q85 10 80 50 Q75 80 35 78 Q0 75 0 40Z" fill="#fff"/><path d="M10 55 Q40 75 75 52 Q70 76 35 77 Q8 74 10 55Z" fill="#e9e1d6"/>
+<circle cx="68" cy="8" r="16" fill="#fff"/><path d="M62 -10 q4 -8 8 0 q4 -8 8 0 q2 6 -6 8 h-8z" fill="#c8281c"/>
+<path d="M83 8 l12 4 l-12 4z" fill="#f4b400"/><circle cx="72" cy="6" r="2.5" fill="#2a1a16"/><path d="M78 18 q3 8 -3 10 q-4 -4 -1 -10z" fill="#c8281c"/>
+<path d="M-6 30 q-14 -6 -10 10 q4 10 16 6z" fill="#efe6da"/><path d="M30 78 v10 M48 78 v10" stroke="#e39a00" stroke-width="4"/></g>
+${[0,1,2].map(i=>`<ellipse cx="${120+i*26}" cy="372" rx="10" ry="13" fill="#fff6e6" stroke="#d9c6a8"/>`).join("")}
+</svg>`;
+
+const chain=()=>{const s=[g("Hatchery","હેચરી"),g("Own feed","પોતાનું ફીડ"),g("Our farms","અમારા ફાર્મ"),g("Live birds","જીવતાં પક્ષી"),g("Shifa cut chicken","શિફા કટ ચિકન")];
+return `<svg class="chain" viewBox="0 0 1000 220" role="img" aria-label="${s.join(' → ')}">
+<path d="M70 110 H700" stroke="#f4b400" stroke-width="10" stroke-linecap="round"/><path d="M700 110 L840 55 M700 110 L840 165" stroke="#f4b400" stroke-width="10" stroke-linecap="round"/>
+${[[70,110],[280,110],[490,110],[860,55],[860,165]].map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="34" fill="#7a1f1a"/><circle cx="${p[0]}" cy="${p[1]}" r="34" fill="none" stroke="#fff" stroke-opacity=".3" stroke-width="3"/>
+<text x="${p[0]}" y="${p[1]+8}" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">${i+1}</text>
+<text x="${i>2?p[0]+44:p[0]}" y="${i>2?p[1]+7:p[1]+64}" text-anchor="${i>2?'start':'middle'}" fill="currentColor" font-size="20" font-weight="600">${s[i]}</text>`).join("")}</svg>`};
+
+const P={
+home:()=>`<section class="band hero"><div>
+<h1>${g("Fresh chicken from our own hatchery, feed and farms","અમારી પોતાની હેચરી, ફીડ અને ફાર્મનું તાજું ચિકન")}</h1>
+<p class="lead">${g("Wankaner, Saurashtra — supplying traders and kitchens across Gujarat.","વાંકાનેર, સૌરાષ્ટ્ર — ગુજરાતભરના વેપારીઓ અને રસોડાં સુધી સપ્લાય.")}</p>
+<div class="btns"><a class="big" href="#traders">${g("I buy live birds","હું જીવતાં પક્ષી ખરીદું છું")}<span>→</span></a>
+<a class="big" href="#shifa">${g("I need cut chicken for my kitchen","મારા રસોડા માટે કટ ચિકન જોઈએ")}<span>→</span></a>
+<a class="big" href="#partner">${g("I want to partner with you","મારે તમારી સાથે ભાગીદારી કરવી છે")}<span>→</span></a></div>
+</div><div>${scene}</div></section>
+<section class="band"><div class="wrap"><h2>${g("Why choose us","અમને કેમ પસંદ કરવા")}</h2><div class="grid">
+${[[g("Our own chain","અમારી પોતાની ચેઇન"),g("Hatchery, feed and farms are all ours, so quality is in our hands.","હેચરી, ફીડ અને ફાર્મ બધું અમારું — ગુણવત્તા અમારા હાથમાં.")],
+[g("Fresh and local","તાજું અને સ્થાનિક"),g("Birds grown nearby and delivered the same day.","નજીકમાં ઉછરેલાં પક્ષી, એ જ દિવસે ડિલિવરી.")],
+[g("Quick response","ઝડપી જવાબ"),g("Call or WhatsApp — a real person answers during working hours.","કૉલ કે વોટ્સએપ — કામના સમયમાં સીધો જવાબ.")]].map((c,i)=>`<div class="card"><b class="n">${i+1}</b><h3>${c[0]}</h3><p>${c[1]}</p></div>`).join("")}
+</div></div></section>
+<section class="band alt"><div class="wrap grid">${[g("Hatchery","હેચરી"),g("Farm","ફાર્મ"),g("Our team","અમારી ટીમ"),g("Shifa","શિફા")].map(x=>`<div class="photo">${x}</div>`).join("")}</div>
+<p class="note wrap">${g("Photo spaces — real photos to be added.","ફોટાની જગ્યા — અસલ ફોટા ઉમેરાશે.")}</p></section>`,
+
+traders:()=>`<section class="band"><div class="wrap two"><div>
+<h1>${g("Live broilers for traders","વેપારીઓ માટે જીવતાં બ્રોઇલર")}</h1>
+<p class="lead">${g("Regular weekly supply for wholesalers and chicken shops.","હોલસેલર અને ચિકન શોપ માટે દર અઠવાડિયે નિયમિત સપ્લાય.")}</p>
+<h3>${g("Where and when we deliver","ક્યાં અને ક્યારે ડિલિવરી")}</h3>
+<table><tr><th>${g("District","જિલ્લો")}</th><th>${g("Days","દિવસ")}</th></tr>
+${[["Morbi","મોરબી","Daily","રોજ"],["Rajkot","રાજકોટ","Mon · Wed · Fri","સોમ · બુધ · શુક્ર"],["Surendranagar","સુરેન્દ્રનગર","Tue · Sat","મંગળ · શનિ"]].map(r=>`<tr><td>${g(r[0],r[1])}</td><td>${g(r[2],r[3])}</td></tr>`).join("")}</table>
+<p class="note">${g("Sample schedule.","નમૂનાનું સમયપત્રક.")}</p>
+<h3>${g("How ordering works","ઑર્ડર કેવી રીતે")}</h3>
+<ul class="t"><li>${g("Call or WhatsApp us with the number of birds.","પક્ષીઓની સંખ્યા સાથે કૉલ કે વોટ્સએપ કરો.")}</li><li>${g("Rate is as per the daily market.","ભાવ રોજના બજાર મુજબ.")}</li><li>${g("We confirm the delivery day and time.","અમે ડિલિવરીનો દિવસ અને સમય નક્કી કરીએ.")}</li></ul>
+<h3>${g("Why us","અમે કેમ")}</h3>
+<ul class="t"><li>${g("Steady supply, week after week","અઠવાડિયે અઠવાડિયે સ્થિર સપ્લાય")}</li><li>${g("Healthy birds","તંદુરસ્ત પક્ષી")}</li><li>${g("Every batch checked by our supervisors","દરેક બેચ અમારા સુપરવાઇઝર તપાસે")}</li></ul>
+</div>${form(g("Trader enquiry","વેપારી પૂછપરછ"),[field(t("name")),field(g("Business type","બિઝનેસનો પ્રકાર"),0,[g("Wholesaler","હોલસેલર"),g("Chicken shop","ચિકન શોપ"),g("Other","અન્ય")]),field(t("district")),field(g("Birds needed per week","દર અઠવાડિયે પક્ષી"),"number"),field(t("phone"),"tel")])}</div></section>`,
+
+shifa:()=>`<section class="band"><div class="wrap two"><div>
+<h1>${g("Shifa cut chicken for hotels and kitchens","હોટેલ અને રસોડાં માટે શિફા કટ ચિકન")}</h1>
+<p class="lead">${g("For hotels, restaurants, caterers and hostels.","હોટેલ, રેસ્ટોરન્ટ, કેટરર અને હૉસ્ટેલ માટે.")}</p>
+<h3>${g("Cuts and pack sizes","કટ અને પેક સાઇઝ")}</h3>
+<table><tr><th>${g("Cut","કટ")}</th><th>${g("Packs","પેક")}</th></tr>
+${[["Curry cut","કરી કટ"],["Boneless","બોનલેસ"],["Whole bird","આખું પક્ષી"],["Leg / breast","લેગ / બ્રેસ્ટ"]].map(r=>`<tr><td>${g(r[0],r[1])}</td><td class="nowrap">1 kg · 5 kg · 10 kg</td></tr>`).join("")}</table>
+<h3 style="margin-top:16px">${g("How we keep it clean","સ્વચ્છતા કેવી રીતે")}</h3>
+<ul class="t"><li>${g("Hygienic handling by trained staff","તાલીમ પામેલા સ્ટાફ દ્વારા સ્વચ્છ હેન્ડલિંગ")}</li><li>${g("Sealed packing","સીલબંધ પેકિંગ")}</li><li>${g("Chilled delivery to your door","ઠંડું રાખીને દરવાજા સુધી ડિલિવરી")}</li></ul>
+<h3>${g("Delivery","ડિલિવરી")}</h3><p>${g("Morning delivery in Wankaner, Morbi and Rajkot.","વાંકાનેર, મોરબી અને રાજકોટમાં સવારે ડિલિવરી.")}</p>
+<div class="card"><h3>${g("Food licence","ફૂડ લાઇસન્સ")}</h3><p>${g("Licence details will be shown here once received. Trial orders open after that.","લાઇસન્સ મળ્યા પછી વિગત અહીં દેખાશે. ત્યાર બાદ ટ્રાયલ ઑર્ડર શરૂ થશે.")}</p>
+<button class="go" disabled style="width:100%">${g("Request a trial order — coming soon","ટ્રાયલ ઑર્ડર — જલ્દી")}</button></div>
+</div>${form(g("Kitchen enquiry","રસોડા માટે પૂછપરછ"),[field(t("name")),field(t("biz")),field(t("area")),field(g("Kg needed per week","દર અઠવાડિયે કિલો"),"number"),field(t("phone"),"tel")])}</div></section>`,
+
+chain:()=>`<section class="band hero" style="grid-template-columns:minmax(0,1fr)"><div class="wrap" style="width:100%">
+<h1>${g("We control quality from egg to delivery","ઈંડાથી ડિલિવરી સુધી ગુણવત્તા અમારા હાથમાં")}</h1>
+<p class="lead">${g("This is our biggest strength against the big companies.","મોટી કંપનીઓ સામે આ અમારી સૌથી મોટી તાકાત છે.")}</p>${chain()}</div></section>
+<section class="band"><div class="wrap grid">
+${[[g("Hatchery","હેચરી"),g("Our own chicks, hatched under controlled temperature and care.","નિયંત્રિત તાપમાન અને કાળજીથી અમારાં પોતાનાં બચ્ચાં.")],
+[g("Feed mill","ફીડ મિલ"),g("Balanced feed made in our own mill, so we know what the birds eat.","અમારી મિલમાં બનેલું સંતુલિત ફીડ — પક્ષી શું ખાય એ અમે જાણીએ.")],
+[g("Supervised farms","સુપરવાઇઝ્ડ ફાર્મ"),g("Our supervisors visit every farm regularly to check health and growth.","અમારા સુપરવાઇઝર નિયમિત દરેક ફાર્મની મુલાકાત લઈ તંદુરસ્તી તપાસે.")]].map(c=>`<div class="card"><div class="photo" style="margin-bottom:12px">${c[0]}</div><h3>${c[0]}</h3><p>${c[1]}</p></div>`).join("")}
+</div></section>
+<section class="band alt"><div class="wrap"><h2>${g("Licences and registrations","લાઇસન્સ અને નોંધણી")}</h2>
+<p>${g("Only licences we actually hold will be listed here.","ફક્ત અમારી પાસે હોય એ જ લાઇસન્સ અહીં બતાવાશે.")}</p>
+<h2 style="margin-top:24px">${g("Gallery","ગેલેરી")}</h2><div class="grid">${[1,2,3,4].map(i=>`<div class="photo">${g("Photo","ફોટો")} ${i}</div>`).join("")}</div></div></section>`,
+
+about:()=>`<section class="band"><div class="wrap two"><div>
+<h1>${g("A family business from Wankaner","વાંકાનેરનો પારિવારિક વ્યવસાય")}</h1>
+<p class="lead">${g("Our family story — how the business started and grew — will be written here with the owners.","અમારા પરિવારની વાર્તા — વ્યવસાય કેવી રીતે શરૂ થયો અને વધ્યો — માલિકો સાથે અહીં લખાશે.")}</p>
+<h3>${g("What the group does today","આજે ગ્રુપ શું કરે છે")}</h3>
+<ul class="t"><li>${g("Hatchery","હેચરી")}</li><li>${g("Feed mill","ફીડ મિલ")}</li><li>${g("Broiler farming","બ્રોઇલર ફાર્મિંગ")}</li><li>${g("Shifa cut chicken","શિફા કટ ચિકન")}</li></ul>
+<h3>${g("Our promise","અમારું વચન")}</h3><p>${g("Fresh, reliable and quick to respond.","તાજું, ભરોસાપાત્ર અને ઝડપી જવાબ.")}</p>
+<button class="go" style="padding:0 20px" id="prof">${g("Download company profile (2 pages)","કંપની પ્રોફાઇલ ડાઉનલોડ (2 પાનાં)")}</button>
+<p class="note" id="profn"></p></div>
+<div class="grid">${[g("Owner name","માલિકનું નામ"),g("Owner name","માલિકનું નામ")].map(n=>`<div class="card"><div class="photo" style="aspect-ratio:1;margin-bottom:10px"></div><h3>${n}</h3><p class="note">${g("Photo and role to be added","ફોટો અને ભૂમિકા ઉમેરાશે")}</p></div>`).join("")}</div>
+</div></section>`,
+
+partner:()=>{const tabs=[[g("Distributors","ડિસ્ટ્રિબ્યુટર"),g("Become our partner in your district. We offer steady supply, fair margins and local support.","તમારા જિલ્લામાં અમારા ભાગીદાર બનો. સ્થિર સપ્લાય, યોગ્ય માર્જિન અને સ્થાનિક સહયોગ."),[field(t("name")),field(t("district")),field(g("Current business","હાલનો વ્યવસાય")),field(t("phone"),"tel")]],
+[g("Farm partners","ફાર્મ ભાગીદાર"),g("Grow birds with us — we give chicks, feed, medicine and regular supervisor visits.","અમારી સાથે પક્ષી ઉછેરો — અમે બચ્ચાં, ફીડ, દવા અને સુપરવાઇઝરની મુલાકાત આપીએ."),[field(t("name")),field(g("Village","ગામ")),field(g("Shed size (sq ft)","શેડની સાઇઝ (ચો.ફૂટ)"),"number"),field(t("phone"),"tel")]],
+[g("Suppliers","સપ્લાયર"),g("Supply feed raw materials (maize, soya) or other farm supplies.","ફીડનો કાચો માલ (મકાઈ, સોયા) કે અન્ય સામગ્રી સપ્લાય કરો."),[field(t("name")),field(t("biz")),field(g("What you supply","તમે શું સપ્લાય કરો છો")),field(t("phone"),"tel")]]];
+return `<section class="band"><div class="wrap"><h1>${g("Partner with us","અમારી સાથે ભાગીદારી")}</h1>
+<p class="lead">${g("We are looking for people who help us grow.","અમને આગળ વધવામાં મદદ કરે એવા લોકોની શોધ છે.")}</p>
+<div class="tabs" role="tablist">${tabs.map((x,i)=>`<button role="tab" data-tab="${i}" class="${i?'':'on'}">${x[0]}</button>`).join("")}</div>
+${tabs.map((x,i)=>`<div class="two" data-pane="${i}" ${i?'hidden':''}><div><h2>${x[0]}</h2><p>${x[1]}</p></div>${form(x[0],x[2])}</div>`).join("")}</div></section>`},
+
+careers:()=>`<section class="band"><div class="wrap two"><div>
+<h1>${g("Work with us","અમારી સાથે કામ કરો")}</h1><p class="lead">${g("Current openings. Work location: Wankaner and nearby farms.","હાલની જગ્યાઓ. કામનું સ્થળ: વાંકાનેર અને નજીકના ફાર્મ.")}</p>
+${[[g("Farm supervisor","ફાર્મ સુપરવાઇઝર"),g("Visit farms, check bird health, guide farmers.","ફાર્મની મુલાકાત, પક્ષીની તંદુરસ્તી તપાસ, ખેડૂતોને માર્ગદર્શન.")],
+[g("Shifa staff","શિફા સ્ટાફ"),g("Cutting, cleaning and packing.","કટિંગ, સફાઈ અને પેકિંગ.")],
+[g("Driver","ડ્રાઇવર"),g("Delivery van with valid licence.","માન્ય લાઇસન્સ સાથે ડિલિવરી વાન.")],
+[g("Sales","સેલ્સ"),g("Find traders and hotels in new districts.","નવા જિલ્લામાં વેપારી અને હોટેલ શોધવા.")]].map(c=>`<div class="card" style="margin-bottom:12px"><h3>${c[0]}</h3><p style="margin:0">${c[1]}</p></div>`).join("")}
+<p class="note">${g("Sample openings.","નમૂનાની જગ્યાઓ.")}</p></div>
+${form(g("Apply","અરજી કરો"),[field(t("name")),field(g("Job","નોકરી"),0,[g("Farm supervisor","ફાર્મ સુપરવાઇઝર"),g("Shifa staff","શિફા સ્ટાફ"),g("Driver","ડ્રાઇવર"),g("Sales","સેલ્સ")]),field(g("Village / city","ગામ / શહેર")),field(t("phone"),"tel")])}
+</div></section>`,
+
+contact:()=>`<section class="band"><div class="wrap two"><div>
+<h1>${g("Contact us","સંપર્ક કરો")}</h1>
+<p class="lead"><span class="nowrap">+91 98250 00000</span> · WhatsApp · info@example.com<br>${t("hours")}</p>
+<div class="grid">${[[g("Office","ઑફિસ"),g("Station Road, Wankaner","સ્ટેશન રોડ, વાંકાનેર")],[g("Hatchery","હેચરી"),g("Village road, near Wankaner","ગામ રોડ, વાંકાનેર પાસે")],[g("Feed mill","ફીડ મિલ"),g("GIDC area, Wankaner","GIDC વિસ્તાર, વાંકાનેર")],[g("Shifa","શિફા"),g("Market Yard, Wankaner","માર્કેટ યાર્ડ, વાંકાનેર")]].map(a=>`<div class="card"><h3>${a[0]}</h3><p>${a[1]}</p><a href="https://maps.google.com/?q=${encodeURIComponent(a[1]+' Gujarat')}" target="_blank" rel="noopener">${g("Open in Google Maps","Google Maps માં ખોલો")} →</a></div>`).join("")}</div>
+<p class="note">${g("Sample addresses.","નમૂનાનાં સરનામાં.")}</p></div>
+${form(g("Send a message","સંદેશ મોકલો"),[field(t("name")),field(t("phone"),"tel"),`<label>${g("Message","સંદેશ")}<textarea rows="4" required></textarea></label>`])}
+</div></section>`
+};
+
+const render=()=>{
+ const id=ids.includes(location.hash.slice(1))?location.hash.slice(1):"home";
+ document.documentElement.lang=L==="en"?"en":"gu";
+ document.querySelectorAll("[data-t]").forEach(e=>e.textContent=t(e.dataset.t));
+ const links=ids.map((x,i)=>`<a href="#${x}" class="${x===id?'on':''}">${t("nav")[i]}</a>`);
+ document.getElementById("nav").innerHTML=links.join("");
+ document.getElementById("fnav").innerHTML=ids.map((x,i)=>`<a href="#${x}">${t("nav")[i]}</a>`).join(" · ");
+ document.getElementById("lang").textContent=L==="en"?"ગુજરાતી":"English";
+ document.getElementById("main").innerHTML=`<div class="page on">${P[id]()}</div>`;
+};
+render();
+addEventListener("hashchange",()=>{render();scrollTo(0,0)});
+document.getElementById("lang").onclick=()=>{L=L==="en"?"gu":"en";try{localStorage.setItem("lang",L)}catch(e){}render()};
+document.getElementById("main").addEventListener("submit",e=>{e.preventDefault();const f=e.target;
+ const vals=[...f.querySelectorAll("input,select,textarea")].map(i=>i.value);
+ console.log("Enquiry for customer system:",f.dataset.f,vals);
+ f.querySelector(".ok").style.display="block";f.reset()});
+document.getElementById("main").addEventListener("click",e=>{
+ const b=e.target.closest("[data-tab]");
+ if(b){document.querySelectorAll("[data-tab]").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll("[data-pane]").forEach(p=>p.hidden=p.dataset.pane!==b.dataset.tab)}
+ if(e.target.id==="prof")document.getElementById("profn").textContent=g("The PDF will be attached once the profile is ready.","પ્રોફાઇલ તૈયાર થયે PDF અહીં મુકાશે.");
+});
+}
+</script>
+</body>
+</html>
